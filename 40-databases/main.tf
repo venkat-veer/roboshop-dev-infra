@@ -20,8 +20,18 @@ resource "terraform_data" "mongodb" {
       password = "DevOps321"
       host = aws_instance.mongodb.private_ip 
     }
+
+    # terrform copies this file to mongodb server   
+    provisioner "file" {
+        source = "bootstrap.sh"
+        destination = "/tmp/bootstrap.sh"
+    }
+
     provisioner "remote-exec" {
-        inline = [ "echo Hello World" ]
+        inline = [ 
+            "chmod +x /tmp/bootstrap.sh",
+            "sudo sh chmod +x /tmp/bootstrap.sh"
+            ]
       
     }
 }

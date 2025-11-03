@@ -9,9 +9,9 @@ dnf install ansible -y
 # ansible-playbook -i inventory main.yml
 
 
-REPO_URL = https://github.com/venkat-veer/ansible-roboshop-roles-tf.git
-REPO_DIR = /opt/roboshop/ansible
-ANSIBLE_DIR = ansible-roboshop-roles-tf
+REPO_URL=https://github.com/venkat-veer/ansible-roboshop-roles-tf.git
+REPO_DIR=/opt/roboshop/ansible
+ANSIBLE_DIR=ansible-roboshop-roles-tf
 
 
 mkdir -p $REPO_DIR

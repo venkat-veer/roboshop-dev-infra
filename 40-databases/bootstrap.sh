@@ -26,10 +26,9 @@ cd $REPO_DIR
 if [ -d $ANSIBLE_DIR ]; then
     cd $ANSIBLE_DIR
     git pull
-
 else
     git clone $REPO_URL
     cd $ANSIBLE_DIR
 fi
 
-ansible-playbook -e component=$component -e environment=$environment main.yml
+ansible-playbook -e component=$component -e env=$environment main.yml

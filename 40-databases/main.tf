@@ -36,7 +36,7 @@ resource "terraform_data" "mongodb" {
     }
 }
 
-/* # redis database configure
+# redis database configure
 resource "aws_instance" "redis" {
     ami = local.ami_id      
     instance_type = "t3.micro"
@@ -111,6 +111,6 @@ resource "terraform_data" "rabbitmq" {
             ]
       
     }
-} */
+}
 
 

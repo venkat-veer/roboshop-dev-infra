@@ -153,7 +153,6 @@ resource "terraform_data" "mysql" {
             "chmod +x /tmp/bootstrap.sh",
             "sudo sh /tmp/bootstrap.sh mysql dev"
             ]
-      
     }
 }
  

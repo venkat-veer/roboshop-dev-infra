@@ -4,11 +4,21 @@ resource "aws_instance" "bastion" {
     vpc_security_group_ids = [local.bastion_sg_id]
     subnet_id = local.public_subnet_id
     user_data = file("bastion.sh")
+    iam_instance_profile = aws_iam_instance_profile.bastion.name
     tags = merge (
         local.common_tags,
         {
             Name = "${var.project_name}-${var.environment}-bastion"
         }
     )
+}
+
+
+
+
+# role created for iam instance profile.
+resource "aws_iam_instance_profile" "bastion"{
+    name = "bastion"
+    role = "BastionTerraformAdmin"
 }
 

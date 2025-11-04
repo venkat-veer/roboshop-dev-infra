@@ -130,7 +130,7 @@ resource "aws_instance" "mysql" {
 # role created for iam instance profile.
 resource "aws_iam_instance_profile" "mysql"{
     name = "mysql"
-    role = "EC2SSMParameterRead"
+    role = "EC2SSMParameterRead"                    # we can use secret manager also but costly delete take time 30 days.
 }
 resource "terraform_data" "mysql" {
     triggers_replace = [aws_instance.mysql.id]

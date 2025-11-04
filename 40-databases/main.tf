@@ -192,3 +192,12 @@ resource "aws_route53_record" "rabbitmq" {
     records = [aws_instance.rabbitmq.private_ip]
     allow_overwrite = true
 }
+
+resource "aws_route53_record" "catalogue" {
+    zone_id = var.zone_id
+    name = "rabbitmq-${var.environment}.${var.domain_name}" # catalogue-dev.devaws.store
+    type = "A"
+    ttl = 1
+    records = [aws_instance.catalogue.private_ip]
+    allow_overwrite = true
+}

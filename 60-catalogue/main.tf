@@ -51,6 +51,6 @@ resource "aws_ec2_instance_state" "catalogue" {
 # create new instance 
 resource "aws_ami_from_instance" "catalogue" {
     name = "${local.common_name_suffix}-catalogue-ami"
-    source_instance_id = aws.instance.catalogue.id
+    source_instance_id = aws_instance.catalogue.id
     depends_on = [aws_ec2_instance_state.catalogue]
 }

@@ -53,3 +53,13 @@ resource "aws_security_group_rule" "mysql_bastion" {
     protocol = "tcp"
     to_port = 22
 }
+
+# catalogue instance accept traffic from bastion 
+resource "aws_security_group_rule" "catalogue_bastion" {
+    type = "ingress"                                           # inbound rule
+    security_group_id =  local.catalogue_sg_id
+    source_security_group_id = local.bastion_sg_id 
+    from_port = 22
+    protocol = "tcp"
+    to_port = 22
+}

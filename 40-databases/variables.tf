@@ -30,5 +30,4 @@ variable "zone_id" {
 
 variable "domain_name" {
     default = "devaws.store"
-  
 }

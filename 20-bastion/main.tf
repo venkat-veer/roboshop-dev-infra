@@ -23,7 +23,7 @@ resource "aws_instance" "bastion" {
 
 # role created for iam instance profile.
 resource "aws_iam_instance_profile" "bastion"{
-    name = "bastion"
-    role = "BastionTerraformAdmin"
+    # name = "bastion"
+    # role = "BastionTerraformAdmin"
 }
 
